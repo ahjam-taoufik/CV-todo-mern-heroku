@@ -1,20 +1,19 @@
 const express = require('express')
 const router=express.Router()
+const {getGoals,setGoals,updateGoals,deleteGoals } = require('../controllers/goalController')
 
-router.get('/', (req, res) => {
-    res.status(200).json({message:'Get Goals'})
-})
 
-router.post('/', (req, res) => {
-    res.status(200).json({message:'Post Goals'})
-})
+//you can enchain get and post 
+// router.route('/').get(getGoals).post(setGoals)
 
-router.put('/:id', (req, res) => {
-    res.status(200).json({message:`Put Goals ${req.params.id}`})
-})
+router.get('/', getGoals)
+router.post('/', setGoals)
 
-router.delete('/:id', (req, res) => {
-    res.status(200).json({message:`Delete Goals ${req.params.id}`})
-})
+//you can enchain put and delete
+// router.route('/:id').put(updateGoals).delete(deleteGoals)
+
+router.put('/:id', updateGoals)
+
+router.delete('/:id', deleteGoals)
 
 module.exports = router

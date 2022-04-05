@@ -35,7 +35,7 @@ const updateGoals =asyncHandler ( async  (req, res) => {
 //@access Private
 const deleteGoals =asyncHandler ( async  (req, res) => {
     res.status(200).json({message:`Delete Goals ${req.params.id}`})
-})
+})  
 
 
 

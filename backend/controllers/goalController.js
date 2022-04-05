@@ -4,7 +4,8 @@
 const getGoals =  (req, res) => {
     if(!req.body.text1)
     {
-        return res.status(400).json({message: 'Please provide text'})
+         res.status(400)
+         throw new Error('Please provide text')
     }
 
     console.log(req.body);

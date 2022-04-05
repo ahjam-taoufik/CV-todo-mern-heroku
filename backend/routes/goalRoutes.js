@@ -13,7 +13,6 @@ router.post('/', setGoals)
 // router.route('/:id').put(updateGoals).delete(deleteGoals)
 
 router.put('/:id', updateGoals)
-
 router.delete('/:id', deleteGoals)
 
 module.exports = router

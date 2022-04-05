@@ -2,6 +2,9 @@
 //@route GET /api/goals
 //@access Private
 const getGoals =  (req, res) => {
+    console.log('====================================');
+    console.log(req.body);
+    console.log('====================================');
     res.status(200).json({message:'Get Goals'})
 }
 

@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 // import { useSelector, useDispatch } from 'react-redux'
 // import { useNavigate } from 'react-router-dom'
@@ -7,12 +7,12 @@ import { FaSignInAlt } from 'react-icons/fa'
 // import Spinner from '../components/Spinner'
 
 function Login() {
-//   const [formData, setFormData] = useState({
-    // email: '',
-    // password: '',
-//   })
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  })
 
-//   const { email, password } = formData
+  const { email, password } = formData
 
 //   const navigate = useNavigate()
 //   const dispatch = useDispatch()
@@ -33,27 +33,27 @@ function Login() {
 //     dispatch(reset())
 //   }, [user, isError, isSuccess, message, navigate, dispatch])
 
-//   const onChange = (e) => {
-//     setFormData((prevState) => ({
-//       ...prevState,
-//       [e.target.name]: e.target.value,
-//     }))
-//   }
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
 
-//   const onSubmit = (e) => {
-//     e.preventDefault()
+  const onSubmit = (e) => {
+    e.preventDefault()
 
-//     const userData = {
-//       email,
-//       password,
-//     }
+    const userData = {
+      email,
+      password,
+    }
 
-//     dispatch(login(userData))
-//   }
+    // dispatch(login(userData))
+  }
 
-//   if (isLoading) {
-//     return <Spinner />
-//   }
+  // if (isLoading) {
+  //   return <Spinner />
+  // }
 
   return (
     <>
@@ -64,7 +64,7 @@ function Login() {
         <p>Login and start setting goals</p>
       </section>
 
-      {/* <section className='form'>
+      <section className='form'>
         <form onSubmit={onSubmit}>
           <div className='form-group'>
             <input
@@ -95,7 +95,7 @@ function Login() {
             </button>
           </div>
         </form>
-      </section> */}
+      </section>
     </>
   )
 }

@@ -1,20 +1,20 @@
-// import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 // import { useSelector, useDispatch } from 'react-redux'
 // import { useNavigate } from 'react-router-dom'
-// import { toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 // import { register, reset } from '../features/auth/authSlice'
 // import Spinner from '../components/Spinner'
 
 function Register() {
-  //   const [formData, setFormData] = useState({
-  //     name: '',
-  //     email: '',
-  //     password: '',
-  //     password2: '',
-  //   })
+    const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      password: '',
+      password2: '',
+    })
 
-  //   const { name, email, password, password2 } = formData
+    const { name, email, password, password2 } = formData
 
   //   const navigate = useNavigate()
   //   const dispatch = useDispatch()
@@ -35,32 +35,33 @@ function Register() {
   //     dispatch(reset())
   //   }, [user, isError, isSuccess, message, navigate, dispatch])
 
-  //   const onChange = (e) => {
-  //     setFormData((prevState) => ({
-  //       ...prevState,
-  //       [e.target.name]: e.target.value,
-  //     }))
-  //   }
+    const onChange = (e) => {
+      setFormData((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }))
+    }
 
-//   const onSubmit = (e) => {
-//     e.preventDefault();
+    console.log("register render");
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-//     if (password !== password2) {
-//       toast.error('Passwords do not match');
-//     } else {
-//       const userData = {
-//         name,
-//         email,
-//         password,
-//       };
+    if (password !== password2) {
+      toast.error('Passwords do not match');
+    } else {
+      const userData = {
+        name,
+        email,
+        password,
+      };
 
-//       dispatch(register(userData));
-//     }
-//   };
+      // dispatch(register(userData));
+    }
+  };
 
-//   if (isLoading) {
-//     return <Spinner />;
-//   }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
   return (
     <>
@@ -72,7 +73,7 @@ function Register() {
         <p>Please create an account</p>
       </section>
 
-      {/* <section className="form">
+      <section className="form">
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
@@ -124,7 +125,7 @@ function Register() {
             </button>
           </div>
         </form>
-      </section> */}
+      </section>
     </>
   );
 }
